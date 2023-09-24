@@ -102,14 +102,9 @@ where city = 'Atlanta';
 -- Run library_simple.sql script 
 -- (source: https://github.com/amyasnov/stepic-db-intro/tree/2650f9a7f9c72e1219ea93cb4c4e410cca046e54/test)
 
-select count(*) from library_simple.author;
-select count(*) from library_simple.author_has_book;
-select count(*) from library_simple.book;
-select count(*) from library_simple.category;
-select count(*) from library_simple.category_has_book;
-select count(*) from library_simple.copy;
-select count(*) from library_simple.issuance;
-select count(*) from library_simple.reader;
+select table_schema, table_name, table_rows
+from INFORMATION_SCHEMA.tables
+where TABLE_SCHEMA = 'library_simple'; 
 
 -- 1. What is the first name of the author with the last name Swanson?
 select first_name from library_simple.author
